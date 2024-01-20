@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third oop program</title>
+</head>
+<body>
+    <h1> Vehicle Class...</h1>
+</body>
+<script>
+    class Vehicle {
+        constructor(make, model, year) {
+          this.make = make;
+          this.model = model;
+          this.year = year;
+        }
+      
+        displayDetails() {
+          console.log(`Make: ${this.make}, Model: ${this.model}, Year: ${this.year}`);
+        }
+      }
+      
+      class Car extends Vehicle {
+        constructor(make, model, year, numberOfDoors) {
+          super(make, model, year);
+          this.numberOfDoors = numberOfDoors;
+        }
+      
+        displayDetails() {
+          super.displayDetails();
+          console.log(`Number of Doors: ${this.numberOfDoors}`);
+        }
+      }
+      
+     
+   myVehicle = new Vehicle("Toyota", "Camry", 2022);
+      
+     
+      console.log("Vehicle Details:");
+      myVehicle.displayDetails();
+      console.log("\n");
+      
+    myCar = new Car("Honda", "Accord", 2023, 4);
+      
+     
+      console.log("Car Details:");
+      myCar.displayDetails();
+      
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fourth oop program</title>
+</head>
+<body>
+    <h1>BankAccounts class ...</h1>
+</body>
+<script>
+    class BankAccount {
+        constructor(accountNumber, balance) {
+          this.accountNumber = accountNumber;
+          this.balance = balance;
+        }
+      
+        deposit(amount) {
+          this.balance += amount;
+          console.log(`Deposited ${amount} into account ${this.accountNumber}. New balance: ${this.balance}`);
+        }
+      
+        withdraw(amount) {
+          if (amount <= this.balance) {
+            this.balance -= amount;
+            console.log(`Withdrawn ${amount} from account ${this.accountNumber}. New balance: ${this.balance}`);
+          } else {
+            console.log(`Insufficient funds in account ${this.accountNumber}.`);
+          }
+        }
+      }
+      
+     
+    account1 = new BankAccount(123456, 1000);
+     account2 = new BankAccount(789012, 500);
+      
+     
+      account1.deposit(500);
+      account2.deposit(200);
+      
+      
+      account1.withdraw(200);
+      account2.withdraw(1000); 
+      
+</script>
+</html>

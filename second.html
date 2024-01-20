@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second oop program</title>
+</head>
+<body>
+<h1> Rectangle Class ....</h1>
+</body>
+<script>
+    class Rectangle {
+        constructor(width, height) {
+          this.width = width;
+          this.height = height;
+        }
+      
+        calculateArea() {
+          return this.width * this.height;
+        }
+      
+        calculatePerimeter() {
+          return 2 * (this.width + this.height);
+        }
+      }
+      
+    
+     myRectangle = new Rectangle(5, 8);
+      
+   
+      area = myRectangle.calculateArea();
+      perimeter = myRectangle.calculatePerimeter();
+      
+      console.log(`Rectangle Area: ${area}`);
+      console.log(`Rectangle Perimeter: ${perimeter}`);
+      
+</script>
+</html>

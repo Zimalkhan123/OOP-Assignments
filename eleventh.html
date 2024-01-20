@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eleventh oop program</title>
+</head>
+<body>
+    <h1>BankAccount Class...</h1>
+</body>
+<script>
+    class BankAccount {
+        constructor(accountNumber, accountHolderName, balance) {
+          this.accountNumber = accountNumber;
+          this.accountHolderName = accountHolderName;
+          this.balance = balance;
+        }
+      
+        deposit(amount) {
+          this.balance += amount;
+          console.log(`Deposited $${amount} into account ${this.accountNumber}. New balance: $${this.balance.toFixed(2)}`);
+        }
+      
+        withdraw(amount) {
+          if (amount <= this.balance) {
+            this.balance -= amount;
+            console.log(`Withdrawn $${amount} from account ${this.accountNumber}. New balance: $${this.balance.toFixed(2)}`);
+          } else {
+            console.log(`Insufficient funds in account ${this.accountNumber}.`);
+          }
+        }
+      
+        transfer(amount, targetAccount) {
+          if (amount <= this.balance) {
+            this.balance -= amount;
+            targetAccount.deposit(amount);
+            console.log(`Transferred $${amount} from account ${this.accountNumber} to account ${targetAccount.accountNumber}.`);
+          } else {
+            console.log(`Insufficient funds in account ${this.accountNumber} for transfer.`);
+          }
+        }
+      
+        displayBalance() {
+          console.log(`Account ${this.accountNumber} balance: $${this.balance.toFixed(2)}`);
+        }
+      }
+      
+   
+       account1 = new BankAccount(1001, "John Doe", 500);
+      account2 = new BankAccount(1002, "Jane Smith", 1000);
+      
+      
+      account1.displayBalance();
+      account2.displayBalance();
+      
+      account1.deposit(200);
+      account2.withdraw(300);
+      
+      account1.transfer(100, account2);
+      
+      account1.displayBalance();
+      account2.displayBalance();
+      
+</script>
+</html>

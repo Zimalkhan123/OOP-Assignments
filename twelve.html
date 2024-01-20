@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>twelve oop program</title>
+</head>
+<body>
+    <h1>University Class</h1>
+</body>
+<script>
+    class University {
+        constructor(universityName) {
+          this.universityName = universityName;
+          this.departments = [];
+        }
+      
+        addDepartment(departmentName) {
+          this.departments.push(departmentName);
+          console.log(`Department "${departmentName}" added to ${this.universityName}.`);
+        }
+      
+        removeDepartment(departmentName) {
+          const departmentIndex = this.departments.indexOf(departmentName);
+          if (departmentIndex !== -1) {
+            this.departments.splice(departmentIndex, 1);
+            console.log(`Department "${departmentName}" removed from ${this.universityName}.`);
+          } else {
+            console.log(`Department "${departmentName}" not found in ${this.universityName}.`);
+          }
+        }
+      
+        displayDepartments() {
+          console.log(`Departments of ${this.universityName}:`);
+          this.departments.forEach((department, index) => {
+            console.log(`${index + 1}. ${department}`);
+          });
+        }
+      }
+      
+
+      myUniversity = new University("ABC University");
+  
+      myUniversity.addDepartment("Computer Science");
+      myUniversity.addDepartment("Mathematics");
+      myUniversity.addDepartment("Physics");
+      
+      
+      myUniversity.displayDepartments();
+      
+      
+      myUniversity.removeDepartment("Mathematics");
+      
+     
+      myUniversity.displayDepartments();
+      
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenth oop program</title>
+</head>
+<body>
+    <h1>Product Class ....</h1>
+</body>
+<script>
+    class Product {
+        constructor(productID, name, price, quantity) {
+          this.productID = productID;
+          this.name = name;
+          this.price = price;
+          this.quantity = quantity;
+        }
+      
+        calculateTotalPrice() {
+          return this.price * this.quantity;
+        }
+      }
+      
+      class PersonalCareProduct extends Product {
+        constructor(productID, name, price, quantity, warrantyPeriod) {
+          super(productID, name, price, quantity);
+          this.warrantyPeriod = warrantyPeriod;
+        }
+      
+        calculateTotalPrice() {
+          basePrice = super.calculateTotalPrice();
+          totalPriceWithWarranty = basePrice + this.warrantyPeriod * 5; // Just an example calculation for the sake of demonstration
+          return totalPriceWithWarranty;
+        }
+      }
+      
+     
+    myPersonalCareProduct = new PersonalCareProduct(123, "Hair Dryer", 50, 2, 2);
+      
+      
+     totalPrice = myPersonalCareProduct.calculateTotalPrice();
+      console.log(`Total Price for ${myPersonalCareProduct.name}: $${totalPrice.toFixed(2)}`);
+      
+
+</script>
+</html>

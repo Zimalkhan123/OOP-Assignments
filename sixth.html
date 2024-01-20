@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sixth oop program</title>
+</head>
+<body>
+    <h1>Employee Class....</h1>
+</body>
+<script>
+    class Employee {
+        constructor(name, salary) {
+          this.name = name;
+          this.salary = salary;
+        }
+      
+        calculateAnnualSalary() {
+          return this.salary * 12;
+        }
+      }
+      
+      class Manager extends Employee {
+        constructor(name, salary, department) {
+          super(name, salary);
+          this.department = department;
+        }
+      
+        calculateAnnualSalary() {
+          
+          bonus = this.salary * 0.1;
+          return super.calculateAnnualSalary() + bonus;
+        }
+      }
+      
+     
+     manager1 = new Manager("John Doe", 60000, "Marketing");
+     manager2 = new Manager("Jane Smith", 80000, "Finance");
+      
+     
+      manager1AnnualSalary = manager1.calculateAnnualSalary();
+      manager2AnnualSalary = manager2.calculateAnnualSalary();
+      
+      console.log(`${manager1.name}'s Annual Salary: $${manager1AnnualSalary.toFixed(2)}`);
+      console.log(`${manager2.name}'s Annual Salary: $${manager2AnnualSalary.toFixed(2)}`);
+      
+</script>
+</html>

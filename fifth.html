@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fifth oop program</title>
+</head>
+<body>
+    <h1>Shape Class....</h1>
+</body>
+<script>
+    class Shape {
+        calculateArea() {
+          console.log("This method should be overridden by subclasses.");
+          return 0;
+        }
+      }
+      
+      class Circle extends Shape {
+        constructor(radius) {
+          super();
+          this.radius = radius;
+        }
+      
+        calculateArea() {
+          return Math.PI * Math.pow(this.radius, 2);
+        }
+      }
+      
+      class Triangle extends Shape {
+        constructor(base, height) {
+          super();
+          this.base = base;
+          this.height = height;
+        }
+      
+        calculateArea() {
+          return 0.5 * this.base * this.height;
+        }
+      }
+      
+      
+     myCircle = new Circle(5);
+      
+     
+    circleArea = myCircle.calculateArea();
+      console.log(`Circle Area: ${circleArea.toFixed(2)}`);
+      
+      
+      myTriangle = new Triangle(8, 4);
+      
+     
+      triangleArea = myTriangle.calculateArea();
+      console.log(`Triangle Area: ${triangleArea}`);
+      
+</script>
+</html>

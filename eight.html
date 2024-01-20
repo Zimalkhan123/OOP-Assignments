@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eight oop program</title>
+</head>
+<body>
+    <h1> Animal Class...</h1>
+</body>
+<script>
+    class Animal {
+        constructor(species, sound) {
+          this.species = species;
+          this.sound = sound;
+        }
+      
+        makeSound() {
+          console.log(`${this.species} makes a sound: ${this.sound}`);
+        }
+      }
+      
+      class Dog extends Animal {
+        constructor(species, sound, color) {
+          super(species, sound);
+          this.color = color;
+        }
+      
+        makeSound() {
+          super.makeSound();
+          console.log(`The dog is ${this.color} in color.`);
+        }
+      }
+      
+  
+      myDog = new Dog("Dog", "Woof", "Brown");
+      
+      
+      myDog.makeSound();
+      
+</script>
+</html>

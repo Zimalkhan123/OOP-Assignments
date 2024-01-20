@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninth oop program</title>
+</head>
+<body>
+    <h1> Bank Class</h1>
+</body>
+<script>
+    class Bank {
+        constructor(bankName) {
+          this.bankName = bankName;
+          this.branches = [];
+        }
+      
+        addBranch(branchName) {
+          this.branches.push(branchName);
+          console.log(`Branch "${branchName}" added to ${this.bankName}.`);
+        }
+      
+        removeBranch(branchName) {
+          const branchIndex = this.branches.indexOf(branchName);
+          if (branchIndex !== -1) {
+            this.branches.splice(branchIndex, 1);
+            console.log(`Branch "${branchName}" removed from ${this.bankName}.`);
+          } else {
+            console.log(`Branch "${branchName}" not found in ${this.bankName}.`);
+          }
+        }
+      
+        displayBranches() {
+          console.log(`Branches of ${this.bankName}:`);
+          this.branches.forEach((branch, index) => {
+            console.log(`${index + 1}. ${branch}`);
+          });
+        }
+      }
+      
+      myBank = new Bank("MyBank");
+      
+    
+      myBank.addBranch("Main Branch");
+      myBank.addBranch("Downtown Branch");
+      myBank.addBranch("Suburb Branch");
+      
+      
+      myBank.displayBranches();
+      
+     
+      myBank.removeBranch("Downtown Branch");
+      
+      
+      myBank.displayBranches();
+      
+</script>
+</html>
